@@ -1,7 +1,6 @@
 package com.example.springboottestcontainers.rest;
 
-import com.sivalabs.tcdemo.infra.MockServerContainerInitializer;
-import com.sivalabs.tcdemo.infra.PostgresDatabaseContainerInitializer;
+import com.example.springboottestcontainers.infra.PostgresDatabaseContainerInitializer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

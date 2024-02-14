@@ -1,7 +1,7 @@
 package com.example.springboottestcontainers.rest;
 
-import com.sivalabs.tcdemo.infra.MockServerContainerInitializer;
-import com.sivalabs.tcdemo.infra.PostgresDatabaseContainerInitializer;
+import com.example.springboottestcontainers.infra.MockServerContainerInitializer;
+import com.example.springboottestcontainers.infra.PostgresDatabaseContainerInitializer;
 import org.junit.jupiter.api.Test;
 import org.mockserver.client.MockServerClient;
 import org.mockserver.model.Header;
@@ -12,14 +12,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static com.sivalabs.tcdemo.infra.MockServerContainerInitializer.mockServerContainer;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static com.example.springboottestcontainers.infra.MockServerContainerInitializer.mockServerContainer;
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockserver.model.HttpRequest.request;
 import static org.mockserver.model.HttpResponse.response;
 import static org.mockserver.model.JsonBody.json;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
@@ -54,10 +54,10 @@ public class GithubControllerIntegrationTest {
                                 .withHeaders(new Header("Content-Type", "application/json; charset=utf-8"))
                                 .withBody(json(
                                         "{ " +
-                                        "\"login\": \""+username+"\", " +
-                                        "\"name\": \"K. Siva Prasad Reddy\", " +
-                                        "\"public_repos\": 50 " +
-                                        "}"))
+                                                "\"login\": \"" + username + "\", " +
+                                                "\"name\": \"K. Siva Prasad Reddy\", " +
+                                                "\"public_repos\": 50 " +
+                                                "}"))
                 );
     }
 

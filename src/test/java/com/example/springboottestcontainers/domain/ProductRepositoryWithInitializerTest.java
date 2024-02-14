@@ -1,6 +1,6 @@
 package com.example.springboottestcontainers.domain;
 
-import com.sivalabs.tcdemo.infra.PostgresDatabaseContainerInitializer;
+import com.example.springboottestcontainers.infra.PostgresDatabaseContainerInitializer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
